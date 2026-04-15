@@ -1,0 +1,4 @@
+company,year,operating_cash_flow,investing_cash_flow,financing_cash_flow,net_income,capex,total_debt,revenue
+AcmeCorp,2023,120000,-45000,-30000,95000,40000,150000,600000
+AcmeCorp,2024,145000,-60000,-25000,110000,55000,140000,680000
+AcmeCorp,2025,90000,-80000,20000,60000,70000,220000,700000
