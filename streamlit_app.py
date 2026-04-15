@@ -40,7 +40,7 @@ st.caption(
 with st.sidebar:
     st.header("Configuration")
     model = st.text_input("Ollama model", value="granite3.2-vision",
-                          help="e.g.llama3.2, mistral, phi3")
+                          help="e.g. granite3.2-vision, qwen2.5:3b, llama3.2")
     dry_run = st.checkbox(
         "Dry-run (skip LLM, show augmented prompt only)", value=False
     )
@@ -156,7 +156,7 @@ if uploaded is not None:
             st.code(str(e))
         st.caption(
             "If the PDF is a real cash-flow statement, try switching to a more "
-            "capable Ollama model in the sidebar (e.g. `granite3.2-vision:7b`, `mistral`, "
+            "capable Ollama model in the sidebar (e.g. `granite3.2-vision`, `qwen2.5`, "
             "or `llama3.1:8b`)."
         )
 

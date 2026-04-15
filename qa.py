@@ -92,7 +92,7 @@ def build_qa_prompt(question: str, results: list[dict]) -> str:
 """
 
 
-def answer_question(question: str, results: list[dict], model: str = "qwen2.5") -> str:
+def answer_question(question: str, results: list[dict], model: str = "granite3.2-vision") -> str:
     prompt = build_qa_prompt(question, results)
     payload = json.dumps({"model": model, "prompt": prompt, "stream": False}).encode()
     req = urllib.request.Request(

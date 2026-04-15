@@ -91,11 +91,11 @@ Rules are plain nodes in the graph. Adding a new rule is a one-line change in `k
 
 ```bash
 # pull a model (pick one)
-ollama pull qwen2.5        # ~4.7 GB, 7B default — strong JSON compliance
-ollama pull qwen2.5:3b     # ~2 GB, 3-5x faster, good for laptops
-ollama pull qwen2.5:1.5b   # ~1 GB, very fast, acceptable for short PDFs
-ollama pull llama3.2       # ~2 GB, fast alternative
-ollama pull phi3           # ~2 GB, good for lower-end machines
+ollama pull granite3.2-vision  # default — best for documents with visual structures (tables/layouts)
+ollama pull qwen2.5            # strong JSON compliance
+ollama pull qwen2.5:3b         # faster alternative for laptops
+ollama pull llama3.2           # fast alternative
+ollama pull phi3               # lower-end machine alternative
 
 # Ollama typically starts automatically on install.
 # If "address already in use" when running `ollama serve`,
@@ -157,16 +157,16 @@ The CLI is useful for scripting or batch processing.
 
 ```bash
 # CSV, print to terminal
-python analyze.py sample_cashflow.csv --company AcmeCorp --model qwen2.5
+python analyze.py sample_cashflow.csv --company AcmeCorp --model granite3.2-vision
 
 # PDF — everything (company, year, unit scale, numbers) is extracted by the LLM
-python analyze.py filing.pdf --model qwen2.5
+python analyze.py filing.pdf --model granite3.2-vision
 
 # Override any field if the LLM misreads it
 python analyze.py filing.pdf --company "PT ABC Tbk" --year 2024 --scale 1000000
 
 # Generate both report formats at once
-python analyze.py sample_cashflow.csv --company AcmeCorp --model qwen2.5 \
+python analyze.py sample_cashflow.csv --company AcmeCorp --model granite3.2-vision \
     --report cashflow_report.pdf --report-md cashflow_report.md
 
 # Dry-run: print the augmented prompt only, no LLM call
@@ -181,7 +181,7 @@ CLI arguments:
 | `--company` | LLM-extracted | Filter rows (CSV) or override extracted name (PDF) |
 | `--year` | LLM-extracted | Override the extracted reporting year (PDF only) |
 | `--scale` | LLM-inferred | Override the inferred unit scale (e.g. `1000000` for millions) |
-| `--model` | `qwen2.5` | Ollama model name |
+| `--model` | `granite3.2-vision` | Ollama model name |
 | `--report` | — | Output PDF report path |
 | `--report-md` | — | Output Markdown report path |
 | `--dry-run` | off | Skip the LLM; print the augmented prompt instead |

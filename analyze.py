@@ -13,7 +13,7 @@ Pipeline:
 
 Examples:
   # CSV
-  python analyze.py sample_cashflow.csv --company AcmeCorp --model llama3.2
+  python analyze.py sample_cashflow.csv --company AcmeCorp --model granite3.2-vision
 
   # PDF (IDX-style, numbers reported in millions of IDR)
   python analyze.py filing.pdf --company "PT ABC Tbk" --year 2024 --scale 1000000
