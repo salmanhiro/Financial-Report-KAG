@@ -252,5 +252,5 @@ If extraction feels slow, switch the sidebar model to `qwen2.5:3b`.
 ## Further reading
 
 - OpenSPG / KAG framework — https://github.com/OpenSPG/KAG
-- *KAG: Boosting LLMs in Professional Domains via Knowledge Augmented Generation* (Liang et al., 2024)
+- *KAG: Boosting LLMs in Professional Domains via Knowledge Augmented Generation* ([Liang et al., 2024](https://arxiv.org/abs/2409.13731))
 - Ollama model library — https://ollama.com/library
